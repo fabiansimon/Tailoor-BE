@@ -25,6 +25,8 @@ public class Tailor {
     @CreationTimestamp
     private Date createdAt;
     private String name;
+    private String description;
+    private List<String> profileImageUrls;
     @ElementCollection
     @CollectionTable(
             name = "tailor_admins",
