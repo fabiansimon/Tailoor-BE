@@ -1,15 +1,14 @@
-package com.tailoor.fabiansimon.Tailoor.offers.service;
+package com.tailoor.fabiansimon.Tailoor.service;
 
-import com.tailoor.fabiansimon.Tailoor.offers.model.Offer;
-import com.tailoor.fabiansimon.Tailoor.offers.repository.OfferRepository;
-import com.tailoor.fabiansimon.Tailoor.tailor.model.Tailor;
-import com.tailoor.fabiansimon.Tailoor.tailor.repository.TailorRepository;
+import com.tailoor.fabiansimon.Tailoor.model.Offer;
+import com.tailoor.fabiansimon.Tailoor.repository.OfferRepository;
+import com.tailoor.fabiansimon.Tailoor.model.Tailor;
+import com.tailoor.fabiansimon.Tailoor.repository.TailorRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class OffersService {

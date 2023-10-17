@@ -1,8 +1,11 @@
-package com.tailoor.fabiansimon.Tailoor.tailor.controller;
+package com.tailoor.fabiansimon.Tailoor.controller;
 
-import com.tailoor.fabiansimon.Tailoor.tailor.model.Tailor;
-import com.tailoor.fabiansimon.Tailoor.tailor.service.TailorService;
+import com.tailoor.fabiansimon.Tailoor.model.Tailor;
+import com.tailoor.fabiansimon.Tailoor.service.TailorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +20,18 @@ public class TailorController {
     private TailorService tailorService;
 
     @GetMapping("/tailors")
-    public ResponseEntity<List<Tailor>> getAllTailors() {
-        return ResponseEntity.ok(tailorService.getAllTailors());
+    public ResponseEntity<Page<Tailor>> getAllTailors(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Tailor> tailors = tailorService.getAllTailors(pageable);
+        return ResponseEntity.ok(tailors);
+    }
+    @GetMapping("/filter-tailors")
+    public ResponseEntity<List<Tailor>> searchTailors(@RequestParam String term) {
+        List<Tailor> tailors = tailorService.searchForTailor(term.toLowerCase());
+        return ResponseEntity.ok(tailors);
     }
 
     @PostMapping("/{tailorId}/add-as-admin/{userId}")
@@ -31,7 +44,6 @@ public class TailorController {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("An error occurred while adding the admin.");
         }
-
     }
 
     @PostMapping("/add-tailor")

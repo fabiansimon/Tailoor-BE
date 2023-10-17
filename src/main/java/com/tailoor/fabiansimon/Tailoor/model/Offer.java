@@ -1,4 +1,4 @@
-package com.tailoor.fabiansimon.Tailoor.offers.model;
+package com.tailoor.fabiansimon.Tailoor.model;
 
 import com.tailoor.fabiansimon.Tailoor.common.ClothingType;
 import jakarta.persistence.*;

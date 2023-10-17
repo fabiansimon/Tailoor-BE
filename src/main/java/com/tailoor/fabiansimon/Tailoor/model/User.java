@@ -1,4 +1,4 @@
-package com.tailoor.fabiansimon.Tailoor.user.model;
+package com.tailoor.fabiansimon.Tailoor.model;
 
 
 import jakarta.persistence.*;

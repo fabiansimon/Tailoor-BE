@@ -1,7 +1,7 @@
-package com.tailoor.fabiansimon.Tailoor.user.controller;
+package com.tailoor.fabiansimon.Tailoor.controller;
 
-import com.tailoor.fabiansimon.Tailoor.user.model.User;
-import com.tailoor.fabiansimon.Tailoor.user.service.UserService;
+import com.tailoor.fabiansimon.Tailoor.model.User;
+import com.tailoor.fabiansimon.Tailoor.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

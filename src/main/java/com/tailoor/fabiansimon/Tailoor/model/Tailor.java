@@ -1,6 +1,5 @@
-package com.tailoor.fabiansimon.Tailoor.tailor.model;
+package com.tailoor.fabiansimon.Tailoor.model;
 
-import com.tailoor.fabiansimon.Tailoor.offers.model.Offer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

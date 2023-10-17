@@ -1,7 +1,7 @@
-package com.tailoor.fabiansimon.Tailoor.user.service;
+package com.tailoor.fabiansimon.Tailoor.service;
 
-import com.tailoor.fabiansimon.Tailoor.user.model.User;
-import com.tailoor.fabiansimon.Tailoor.user.repository.UserRepository;
+import com.tailoor.fabiansimon.Tailoor.model.User;
+import com.tailoor.fabiansimon.Tailoor.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

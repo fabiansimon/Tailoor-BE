@@ -1,10 +1,12 @@
-package com.tailoor.fabiansimon.Tailoor.tailor.service;
+package com.tailoor.fabiansimon.Tailoor.service;
 
-import com.tailoor.fabiansimon.Tailoor.tailor.model.Tailor;
-import com.tailoor.fabiansimon.Tailoor.tailor.repository.TailorRepository;
-import com.tailoor.fabiansimon.Tailoor.user.repository.UserRepository;
+import com.tailoor.fabiansimon.Tailoor.model.Tailor;
+import com.tailoor.fabiansimon.Tailoor.repository.TailorRepository;
+import com.tailoor.fabiansimon.Tailoor.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,8 +24,16 @@ public class TailorService {
         return tailorRepository.findAll();
     }
 
+    public Page<Tailor> getAllTailors(Pageable pageable) {
+        return tailorRepository.findAll(pageable);
+    }
+
     public Tailor saveTailor(Tailor tailor) {
         return tailorRepository.save(tailor);
+    }
+
+    public List<Tailor> searchForTailor(String searchTerm) {
+        return tailorRepository.findTailorByTerm(searchTerm);
     }
 
     @Transactional

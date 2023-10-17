@@ -1,7 +1,7 @@
-package com.tailoor.fabiansimon.Tailoor.offers.controller;
+package com.tailoor.fabiansimon.Tailoor.controller;
 
-import com.tailoor.fabiansimon.Tailoor.offers.model.Offer;
-import com.tailoor.fabiansimon.Tailoor.offers.service.OffersService;
+import com.tailoor.fabiansimon.Tailoor.model.Offer;
+import com.tailoor.fabiansimon.Tailoor.service.OffersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
